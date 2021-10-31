@@ -42,11 +42,20 @@ class Menu extends Component {
                 </Navbar>
 
                 <div className={this.state.sideNavClass}>
-                    <NavLink className="NavItem" to=""> <FontAwesomeIcon icon={faHome} /> Home</NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="/"> <FontAwesomeIcon icon={faHome} /> Home</Link></NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="/course"> <FontAwesomeIcon icon={faHome} /> Courses</Link></NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="project"> <FontAwesomeIcon icon={faHome} /> Projects</Link></NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="service"> <FontAwesomeIcon icon={faHome} /> Services</Link></NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="review"> <FontAwesomeIcon icon={faHome} /> Review</Link></NavLink>
+                    <NavLink><Link className="my-0 p-2 text-white text-decoration-none" to="contact"> <FontAwesomeIcon icon={faHome} /> Contact</Link></NavLink>
                 </div>
 
                 <div onClick={this.showHideSideNav} className={this.state.mainDivOverlay}>
 
+                </div>
+
+                <div className="mt-5">
+                    {this.props.children}
                 </div>
             </Fragment>
         );
