@@ -49,7 +49,8 @@ class ContactPage extends Component {
                 <Menu>
                     <Container>
                         <Row>
-                            <Col xl={12} lg={12} md={12} sm={12}>
+                            <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                                <h1 className="text-center pt-5">Contact List</h1>
                                 <div className="pt-3 ps-5 ms-3">
                                     <BootstrapTable pagination={ paginationFactory() } keyField='id' data={ data } columns={ columns } />
                                 </div>

@@ -38,7 +38,7 @@ class Menu extends Component {
         return (
             <Fragment>
                 <Navbar  expand="lg" className="fixed-top shadow-sm bg-white mb-5 py-3" variant="light" bg="white">
-                    <Navbar.Brand onClick={this.showHideSideNav} href="#"><FontAwesomeIcon icon={faBars} /></Navbar.Brand>
+                    <Navbar.Brand onClick={this.showHideSideNav} href="#" className="ms-2"><FontAwesomeIcon icon={faBars} /></Navbar.Brand>
                     <b>ADMIN DASHBOARD</b>
                 </Navbar>
 
