@@ -22,9 +22,10 @@ class Menu extends Component {
             sideNavClass:"sidenavClose",
             mainDivOverlay:"main-overlay-close"
         }
+        // this.showHideSideNav = this.showHideSideNav.bind(this)
     }
 
-    showHideSideNav=()=>{
+    showHideSideNav = () => {
         if(this.state.sideNav===false){
             this.setState({sideNav:true,NavText:"",sideNavClass:"sidenavOpen",mainDivOverlay:"main-overlay-open"})
         }

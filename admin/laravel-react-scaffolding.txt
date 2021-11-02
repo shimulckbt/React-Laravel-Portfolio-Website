@@ -18,3 +18,12 @@ npm start
 --prefer-source would try to clone and keep the whole VCS repository of the dependencies when available. This is useful when you want to have the original VCS repositories cloned in your vendor/ folder. E.g. you might want to work on the dependencies - modify them, fork them, submit pull requests etc. while also using them as part of the bigger project which requires them in the first place.
 
 Simply speaking, the --prefer-source option will prefer to create a package directory that is a "version control repository", which is equivalent to you typing:
+
+
+## react bootstrap table installation error
+
+npm install react-bootstrap-table-next --save
+
+this command line showing error
+
+fixed commad line: npm install react-bootstrap-table-next --save --legacy-peer-deps
