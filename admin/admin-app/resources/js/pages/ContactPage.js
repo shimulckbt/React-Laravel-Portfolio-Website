@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import axios from "axios";
+import {Col, Container, Row} from "react-bootstrap";
 
 class ContactPage extends Component {
 
@@ -39,18 +40,22 @@ class ContactPage extends Component {
             [
                 {dataField: 'id', text: 'ID'},
                 {dataField: 'name', text: 'Name'},
+                {dataField: 'email', text: 'Email'},
                 {dataField: 'message', text: 'Message'},
-                {dataField: 'type', text: 'Type'},
             ]
 
         return (
             <Fragment>
                 <Menu>
-                    <h1 className="pt-3 ps-5 ms-3">Contact Page</h1>
-                    <div className="pt-3 ps-5 ms-3">
-                        <BootstrapTable pagination={ paginationFactory() } keyField='id' data={ data } columns={ columns } />
-                    </div>
-
+                    <Container>
+                        <Row>
+                            <Col xl={12} lg={12} md={12} sm={12}>
+                                <div className="pt-3 ps-5 ms-3">
+                                    <BootstrapTable pagination={ paginationFactory() } keyField='id' data={ data } columns={ columns } />
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Menu>
             </Fragment>
         );
