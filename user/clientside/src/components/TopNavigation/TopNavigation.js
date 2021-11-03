@@ -6,6 +6,7 @@ import '../../asset/css/custom.css'
 import '../../asset/css/bootstrap.min.css'
 import '../../asset/css/responsive.css'
 import {NavLink} from "react-router-dom";
+import Bounce from 'react-reveal/Bounce';
 
 class TopNavigation extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class TopNavigation extends Component {
             <Fragment>
                 <title>{this.state.pageTitle}</title>
                 <Navbar variant={this.state.navVariant} className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg">
-                        <Navbar.Brand ><NavLink className={this.state.navBarTitle} to="/"><img src={this.state.navBarLogo}/> Shimul Chakraborty</NavLink></Navbar.Brand>
+                    <Bounce><Navbar.Brand ><NavLink className={this.state.navBarTitle} to="/"><img src={this.state.navBarLogo}/> Shimul Chakraborty</NavLink></Navbar.Brand></Bounce>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">

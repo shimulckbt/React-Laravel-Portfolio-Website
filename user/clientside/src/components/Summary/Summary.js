@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons"
 import CountUp from 'react-countup';
 import VisibilitySensor from "react-visibility-sensor";
+import Zoom from 'react-reveal/Zoom';
 
 class Summary extends Component {
     render() {
@@ -52,17 +53,19 @@ class Summary extends Component {
                                 </Col>
 
                                 <Col lg={4} md={6} sm={12}>
-                                    <Card className="workCard">
-                                        <Card.Body>
-                                            <Card.Title className="cardTitle">How i Work</Card.Title>
-                                            <Card.Text>
-                                                <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Requirement Gathering</p>
-                                                <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>System Analysis</p>
-                                                <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Coding Testing</p>
-                                                <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Implementation</p>
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
+                                    <Zoom top>
+                                        <Card className="workCard">
+                                            <Card.Body>
+                                                <Card.Title className="cardTitle">How i Work</Card.Title>
+                                                <Card.Text>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Requirement Gathering</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>System Analysis</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Coding Testing</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Implementation</p>
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Zoom>
                                 </Col>
 
                             </Row>
