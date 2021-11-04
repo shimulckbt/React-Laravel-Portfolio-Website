@@ -14421,7 +14421,7 @@ var ContactPage = /*#__PURE__*/function (_Component) {
                     className: "pt-3 ps-5 ms-3",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       onClick: this.contactDataDelete,
-                      calssName: "normal-btn py-2 btn",
+                      className: "normal-btn mb-2 btn",
                       children: "Delete"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_table_next__WEBPACK_IMPORTED_MODULE_2__["default"], {
                       pagination: (0,react_bootstrap_table2_paginator__WEBPACK_IMPORTED_MODULE_3__["default"])(),

@@ -1,21 +1,23 @@
-import React, {Component, Fragment} from 'react';
-import {Button, Col, Container, Row} from "react-bootstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Col, Container, Row } from "react-bootstrap";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
 import Loading from "../Loading/Loading";
 import WentWrong from "../WentWrong/WentWrong";
+import Fade from 'react-reveal/Fade';
+import { Link } from "react-router-dom";
 
 class TopBanner extends Component {
 
     constructor() {
         super();
-        this.state={
-            title:"",
-            subtitle:"",
-            loaderClass:"text-center",
-            mainDivClass:"d-none",
-            error:false,
-            wentWrong:"d-none"
+        this.state = {
+            title: "",
+            subtitle: "",
+            loaderClass: "text-center",
+            mainDivClass: "d-none",
+            error: false,
+            wentWrong: "d-none"
         }
     }
 
@@ -28,7 +30,7 @@ class TopBanner extends Component {
                     mainDivClass: "d-none",
                     wentWrong: "text-center"
                 })
-            }else{
+            } else {
                 this.setState({
                     title: result[0]['home_title'],
                     subtitle: result[0]['home_subtitle'],
@@ -36,9 +38,9 @@ class TopBanner extends Component {
                     mainDivClass: "text-center"
                 })
             }
-        }).catch(error=>{
+        }).catch(error => {
             this.setState({
-                loaderClass:"d-none",
+                loaderClass: "d-none",
                 mainDivClass: "d-none",
                 wentWrong: "text-center"
             })
@@ -54,18 +56,18 @@ class TopBanner extends Component {
                             <Row>
 
                                 <Col className={this.state.wentWrong}>
-                                    <WentWrong/>
+                                    <WentWrong />
                                 </Col>
 
                                 <Col className={this.state.loaderClass}>
-                                    <Loading/>
+                                    <Loading />
                                 </Col>
 
                                 <Col className={this.state.mainDivClass}>
-                                    <span className={this.state.loaderClass}><Loading/></span>
-                                    <h1 className="topTitle">{this.state.title}</h1>
-                                    <h2 className="topSubTitle">{this.state.subtitle}</h2>
-                                    <Button variant="primary">More Info</Button>
+                                    <span className={this.state.loaderClass}><Loading /></span>
+                                    <Fade top><h1 className="topTitle">{this.state.title}</h1></Fade>
+                                    <Fade top><h2 className="topSubTitle">{this.state.subtitle}</h2></Fade>
+                                    <Link to="/about"><Button variant="primary">More Info</Button></Link>
                                 </Col>
                             </Row>
                         </Container>
