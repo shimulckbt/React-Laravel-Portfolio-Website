@@ -73,6 +73,13 @@ class ContactPage extends Component {
                     { dataField: 'message', text: 'Message' },
                 ]
 
+            const selectRow = {
+                mode: 'checkbox',
+                onselect: (row, isSelect, rowIndex) => {
+                    alert(row['id'])
+                }
+            }
+
             return (
                 <Fragment>
                     <Menu>
@@ -81,13 +88,18 @@ class ContactPage extends Component {
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                                     <h1 className="text-center pt-5">Contact List</h1>
                                     <div className="pt-3 ps-5 ms-3">
-                                        <BootstrapTable pagination={paginationFactory()} keyField='id' data={data} columns={columns} />
+                                        <BootstrapTable
+                                            pagination={paginationFactory()}
+                                            keyField='id'
+                                            data={data}
+                                            selectRow={selectRow}
+                                            columns={columns} />
                                     </div>
                                 </Col>
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment>
+                </Fragment >
             );
         }
     }

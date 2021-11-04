@@ -14376,6 +14376,12 @@ var ContactPage = /*#__PURE__*/function (_Component) {
           dataField: 'message',
           text: 'Message'
         }];
+        var selectRow = {
+          mode: 'checkbox',
+          onselect: function onselect(row, isSelect, rowIndex) {
+            alert(row['id']);
+          }
+        };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -14395,6 +14401,7 @@ var ContactPage = /*#__PURE__*/function (_Component) {
                       pagination: (0,react_bootstrap_table2_paginator__WEBPACK_IMPORTED_MODULE_3__["default"])(),
                       keyField: "id",
                       data: data,
+                      selectRow: selectRow,
                       columns: columns
                     })
                   })]
