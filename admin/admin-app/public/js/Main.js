@@ -14281,6 +14281,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -14303,10 +14305,21 @@ var ContactPage = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, ContactPage);
 
     _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "contactDataDelete", function () {
+      axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+        id: _this.state.rowDataID
+      }).then(function (response) {
+        // alert(response.data);
+        _this.componentDidMount();
+      })["catch"](function () {});
+    });
+
     _this.state = {
       dataList: [],
       isLoading: true,
-      isError: false
+      isError: false,
+      rowDataID: ""
     };
     return _this;
   }
@@ -14339,6 +14352,8 @@ var ContactPage = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       if (this.state.isLoading == true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -14377,9 +14392,16 @@ var ContactPage = /*#__PURE__*/function (_Component) {
           text: 'Message'
         }];
         var selectRow = {
-          mode: 'checkbox',
-          onselect: function onselect(row, isSelect, rowIndex) {
-            alert(row['id']);
+          mode: 'radio',
+          // bgColor: (row, rowIndex) => {
+          //     return '#000000';  // return a color code
+          // },
+          bgColor: 'green',
+          onSelect: function onSelect(row, isSelect, rowIndex, e) {
+            // alert(row['id']);
+            _this3.setState({
+              rowDataID: row['id']
+            });
           }
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -14395,15 +14417,19 @@ var ContactPage = /*#__PURE__*/function (_Component) {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                     className: "text-center pt-5",
                     children: "Contact List"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "pt-3 ps-5 ms-3",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_table_next__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                      onClick: this.contactDataDelete,
+                      calssName: "normal-btn py-2 btn",
+                      children: "Delete"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_table_next__WEBPACK_IMPORTED_MODULE_2__["default"], {
                       pagination: (0,react_bootstrap_table2_paginator__WEBPACK_IMPORTED_MODULE_3__["default"])(),
                       keyField: "id",
                       data: data,
                       selectRow: selectRow,
                       columns: columns
-                    })
+                    })]
                   })]
                 })
               })

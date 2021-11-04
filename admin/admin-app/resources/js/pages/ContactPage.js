@@ -14,7 +14,8 @@ class ContactPage extends Component {
         this.state = {
             dataList: [],
             isLoading: true,
-            isError: false
+            isError: false,
+            rowDataID: ""
         }
     }
 
@@ -30,6 +31,15 @@ class ContactPage extends Component {
 
         }).catch((error) => {
             this.setState({ isLoading: false, isError: true })
+        })
+    }
+
+    contactDataDelete = () => {
+        axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
+            // alert(response.data);
+            this.componentDidMount();
+        }).catch(() => {
+
         })
     }
 
@@ -74,9 +84,14 @@ class ContactPage extends Component {
                 ]
 
             const selectRow = {
-                mode: 'checkbox',
-                onselect: (row, isSelect, rowIndex) => {
-                    alert(row['id'])
+                mode: 'radio',
+                // bgColor: (row, rowIndex) => {
+                //     return '#000000';  // return a color code
+                // },
+                bgColor: 'green',
+                onSelect: (row, isSelect, rowIndex, e) => {
+                    // alert(row['id']);
+                    this.setState({ rowDataID: row['id'] });
                 }
             }
 
@@ -88,6 +103,7 @@ class ContactPage extends Component {
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                                     <h1 className="text-center pt-5">Contact List</h1>
                                     <div className="pt-3 ps-5 ms-3">
+                                        <button onClick={this.contactDataDelete} calssName="normal-btn py-2 btn">Delete</button>
                                         <BootstrapTable
                                             pagination={paginationFactory()}
                                             keyField='id'
