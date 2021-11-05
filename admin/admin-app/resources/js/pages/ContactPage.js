@@ -37,27 +37,33 @@ class ContactPage extends Component {
     }
 
     contactDataDelete = () => {
-        this.setState({dataDeleteText:"Deleting..."});
-        axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
-            // alert(response.data);
-            if(response.data===1 && response.status===200){
-                this.setState({dataDeleteText:"Delete Success!!"})
-                this.componentDidMount();
+
+        let confirmDelete = confirm("Are you sure ?")
+        if(confirmDelete===true){
+            this.setState({dataDeleteText:"Deleting..."});
+            axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
+                // alert(response.data);
+                if(response.data===1 && response.status===200){
+                    this.setState({dataDeleteText:"Delete Success!!"})
+                    this.componentDidMount();
+                    setTimeout(()=>{
+                        this.setState({dataDeleteText:"Delete"})
+                    },1500)
+                }else {
+                    this.setState({dataDeleteText:"Delete Fail!!"});
+                    setTimeout(()=>{
+                        this.setState({dataDeleteText:"Delete"})
+                    },1500)
+                }
+            }).catch(() => {
+                this.setState({dataDeleteText:"Something Went Wrong!!"});
                 setTimeout(()=>{
                     this.setState({dataDeleteText:"Delete"})
                 },1500)
-            }else {
-                this.setState({dataDeleteText:"Delete Fail!!"});
-                setTimeout(()=>{
-                    this.setState({dataDeleteText:"Delete"})
-                },1500)
-            }
-        }).catch(() => {
-            this.setState({dataDeleteText:"Something Went Wrong!!"});
-            setTimeout(()=>{
-                this.setState({dataDeleteText:"Delete"})
-            },1500)
-        })
+            })
+        }else {
+            this.setState({dataDeleteText:"Delete"})
+        }
     }
 
     render() {

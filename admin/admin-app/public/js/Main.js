@@ -14307,48 +14307,56 @@ var ContactPage = /*#__PURE__*/function (_Component) {
     _this = _super.call(this);
 
     _defineProperty(_assertThisInitialized(_this), "contactDataDelete", function () {
-      _this.setState({
-        dataDeleteText: "Deleting..."
-      });
+      var confirmDelete = confirm("Are you sure ?");
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
-        id: _this.state.rowDataID
-      }).then(function (response) {
-        // alert(response.data);
-        if (response.data === 1 && response.status === 200) {
-          _this.setState({
-            dataDeleteText: "Delete Success!!"
-          });
-
-          _this.componentDidMount();
-
-          setTimeout(function () {
-            _this.setState({
-              dataDeleteText: "Delete"
-            });
-          }, 1500);
-        } else {
-          _this.setState({
-            dataDeleteText: "Delete Fail!!"
-          });
-
-          setTimeout(function () {
-            _this.setState({
-              dataDeleteText: "Delete"
-            });
-          }, 1500);
-        }
-      })["catch"](function () {
+      if (confirmDelete === true) {
         _this.setState({
-          dataDeleteText: "Something Went Wrong!!"
+          dataDeleteText: "Deleting..."
         });
 
-        setTimeout(function () {
+        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+          id: _this.state.rowDataID
+        }).then(function (response) {
+          // alert(response.data);
+          if (response.data === 1 && response.status === 200) {
+            _this.setState({
+              dataDeleteText: "Delete Success!!"
+            });
+
+            _this.componentDidMount();
+
+            setTimeout(function () {
+              _this.setState({
+                dataDeleteText: "Delete"
+              });
+            }, 1500);
+          } else {
+            _this.setState({
+              dataDeleteText: "Delete Fail!!"
+            });
+
+            setTimeout(function () {
+              _this.setState({
+                dataDeleteText: "Delete"
+              });
+            }, 1500);
+          }
+        })["catch"](function () {
           _this.setState({
-            dataDeleteText: "Delete"
+            dataDeleteText: "Something Went Wrong!!"
           });
-        }, 1500);
-      });
+
+          setTimeout(function () {
+            _this.setState({
+              dataDeleteText: "Delete"
+            });
+          }, 1500);
+        });
+      } else {
+        _this.setState({
+          dataDeleteText: "Delete"
+        });
+      }
     });
 
     _this.state = {
