@@ -18,7 +18,7 @@ Route::get('/serviceList', 'App\Http\Controllers\ServiceController@ServiceList')
 Route::post('/serviceDelete', 'App\Http\Controllers\ServiceController@ServiceDelete');
 
 //review data manage
-Route::get('/reviewList', 'App\Http\Controllers\ReviewController@ReviewList');
+Route::get('/reviewList', 'App\Http\Controllers\ReviewController@ClientAllReviewList');
 Route::post('/reviewDelete', 'App\Http\Controllers\ReviewController@ReviewDelete');
 
 

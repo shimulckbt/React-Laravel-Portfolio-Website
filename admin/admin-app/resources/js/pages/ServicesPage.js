@@ -22,7 +22,7 @@ class ServicesPage extends Component {
     }
 
     componentDidMount() {
-        axios.get('/contactList').then((response) => {
+        axios.get('/serviceList').then((response) => {
             if (response.status === 200) {
                 this.setState({ dataList: response.data, isLoading: false, isError: false })
             }
@@ -41,7 +41,7 @@ class ServicesPage extends Component {
         let confirmDelete = confirm("Are you sure ?")
         if(confirmDelete===true){
             this.setState({dataDeleteText:"Deleting..."});
-            axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
+            axios.post('/serviceDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
                 if(response.data===1 && response.status===200){
                     this.setState({dataDeleteText:"Delete Success!!"})
@@ -90,9 +90,9 @@ class ServicesPage extends Component {
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
-                    { dataField: 'name', text: 'Name' },
-                    { dataField: 'email', text: 'Email' },
-                    { dataField: 'message', text: 'Message' },
+                    { dataField: 'service_name', text: 'Service Name' },
+                    { dataField: 'service_description', text: 'Description' },
+                    { dataField: 'service_logo ', text: 'Logo' },
                 ]
 
             const selectRow = {

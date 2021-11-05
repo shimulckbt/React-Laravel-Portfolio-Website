@@ -13787,11 +13787,6 @@ var App = /*#__PURE__*/function (_Component) {
   \******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 __webpack_require__(/*! ./index */ "./resources/js/index.js");
 
 /***/ }),
@@ -14243,7 +14238,7 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
           dataDeleteText: "Deleting..."
         });
 
-        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/reviewDelete', {
           id: _this.state.rowDataID
         }).then(function (response) {
           // alert(response.data);
@@ -14303,7 +14298,7 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/contactList').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/reviewList').then(function (response) {
         if (response.status === 200) {
           _this2.setState({
             dataList: response.data,
@@ -14346,14 +14341,11 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
           dataField: 'id',
           text: 'ID'
         }, {
-          dataField: 'name',
-          text: 'Name'
+          dataField: 'client_title',
+          text: 'Title'
         }, {
-          dataField: 'email',
-          text: 'Email'
-        }, {
-          dataField: 'message',
-          text: 'Message'
+          dataField: 'client_description',
+          text: 'Description'
         }];
         var selectRow = {
           mode: 'radio',
@@ -14735,7 +14727,7 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
           dataDeleteText: "Deleting..."
         });
 
-        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/courseDelete', {
           id: _this.state.rowDataID
         }).then(function (response) {
           // alert(response.data);
@@ -14795,7 +14787,7 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/contactList').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/courseList').then(function (response) {
         if (response.status === 200) {
           _this2.setState({
             dataList: response.data,
@@ -14838,14 +14830,17 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
           dataField: 'id',
           text: 'ID'
         }, {
-          dataField: 'name',
-          text: 'Name'
+          dataField: 'short_title',
+          text: 'Title'
         }, {
-          dataField: 'email',
-          text: 'Email'
+          dataField: 'short_description',
+          text: 'Description'
         }, {
-          dataField: 'message',
-          text: 'Message'
+          dataField: 'total_lectures',
+          text: 'Total Lecture'
+        }, {
+          dataField: 'total_students',
+          text: 'Total Students'
         }];
         var selectRow = {
           mode: 'radio',
@@ -15052,7 +15047,7 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
           dataDeleteText: "Deleting..."
         });
 
-        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/projectDelete', {
           id: _this.state.rowDataID
         }).then(function (response) {
           // alert(response.data);
@@ -15112,7 +15107,7 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/contactList').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/projectList').then(function (response) {
         if (response.status === 200) {
           _this2.setState({
             dataList: response.data,
@@ -15155,14 +15150,14 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
           dataField: 'id',
           text: 'ID'
         }, {
-          dataField: 'name',
-          text: 'Name'
+          dataField: 'project_name',
+          text: 'Project Name'
         }, {
-          dataField: 'email',
-          text: 'Email'
+          dataField: 'short_description',
+          text: 'Description'
         }, {
-          dataField: 'message',
-          text: 'Message'
+          dataField: 'project_features',
+          text: 'Features'
         }];
         var selectRow = {
           mode: 'radio',
@@ -15298,7 +15293,7 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
           dataDeleteText: "Deleting..."
         });
 
-        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
+        axios__WEBPACK_IMPORTED_MODULE_4___default().post('/serviceDelete', {
           id: _this.state.rowDataID
         }).then(function (response) {
           // alert(response.data);
@@ -15358,7 +15353,7 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/contactList').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_4___default().get('/serviceList').then(function (response) {
         if (response.status === 200) {
           _this2.setState({
             dataList: response.data,
@@ -15401,14 +15396,14 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
           dataField: 'id',
           text: 'ID'
         }, {
-          dataField: 'name',
-          text: 'Name'
+          dataField: 'service_name',
+          text: 'Service Name'
         }, {
-          dataField: 'email',
-          text: 'Email'
+          dataField: 'service_description',
+          text: 'Description'
         }, {
-          dataField: 'message',
-          text: 'Message'
+          dataField: 'service_logo ',
+          text: 'Logo'
         }];
         var selectRow = {
           mode: 'radio',

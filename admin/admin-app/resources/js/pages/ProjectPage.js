@@ -22,7 +22,7 @@ class ProjectPage extends Component {
     }
 
     componentDidMount() {
-        axios.get('/contactList').then((response) => {
+        axios.get('/projectList').then((response) => {
             if (response.status === 200) {
                 this.setState({ dataList: response.data, isLoading: false, isError: false })
             }
@@ -41,7 +41,7 @@ class ProjectPage extends Component {
         let confirmDelete = confirm("Are you sure ?")
         if(confirmDelete===true){
             this.setState({dataDeleteText:"Deleting..."});
-            axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
+            axios.post('/projectDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
                 if(response.data===1 && response.status===200){
                     this.setState({dataDeleteText:"Delete Success!!"})
@@ -90,9 +90,9 @@ class ProjectPage extends Component {
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
-                    { dataField: 'name', text: 'Name' },
-                    { dataField: 'email', text: 'Email' },
-                    { dataField: 'message', text: 'Message' },
+                    { dataField: 'project_name', text: 'Project Name' },
+                    { dataField: 'short_description', text: 'Description' },
+                    { dataField: 'project_features', text: 'Features' },
                 ]
 
             const selectRow = {

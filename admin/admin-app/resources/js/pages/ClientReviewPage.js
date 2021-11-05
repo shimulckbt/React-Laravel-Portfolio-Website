@@ -22,7 +22,7 @@ class ClientReviewPage extends Component {
     }
 
     componentDidMount() {
-        axios.get('/contactList').then((response) => {
+        axios.get('/reviewList').then((response) => {
             if (response.status === 200) {
                 this.setState({ dataList: response.data, isLoading: false, isError: false })
             }
@@ -41,7 +41,7 @@ class ClientReviewPage extends Component {
         let confirmDelete = confirm("Are you sure ?")
         if(confirmDelete===true){
             this.setState({dataDeleteText:"Deleting..."});
-            axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
+            axios.post('/reviewDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
                 if(response.data===1 && response.status===200){
                     this.setState({dataDeleteText:"Delete Success!!"})
@@ -90,9 +90,8 @@ class ClientReviewPage extends Component {
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
-                    { dataField: 'name', text: 'Name' },
-                    { dataField: 'email', text: 'Email' },
-                    { dataField: 'message', text: 'Message' },
+                    { dataField: 'client_title', text: 'Title' },
+                    { dataField: 'client_description', text: 'Description' },
                 ]
 
             const selectRow = {
@@ -106,7 +105,6 @@ class ClientReviewPage extends Component {
                     this.setState({ rowDataID: row['id'] });
                 }
             }
-
             return (
                 <Fragment>
                     <Menu>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ClientReviewModel;
 class ReviewController extends Controller
 {
-    function ReviewList(){
+    function ClientAllReviewList(){
         $result = ClientReviewModel::all();
         return $result;
     }
