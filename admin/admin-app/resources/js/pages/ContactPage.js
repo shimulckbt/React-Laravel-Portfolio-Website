@@ -15,13 +15,15 @@ class ContactPage extends Component {
             dataList: [],
             isLoading: true,
             isError: false,
-            rowDataID: ""
+            rowDataID: "",
+            dataDeleteText:'Delete'
+
         }
     }
 
     componentDidMount() {
         axios.get('/contactList').then((response) => {
-            if (response.status == 200) {
+            if (response.status === 200) {
                 this.setState({ dataList: response.data, isLoading: false, isError: false })
             }
             else {
@@ -35,17 +37,23 @@ class ContactPage extends Component {
     }
 
     contactDataDelete = () => {
+        this.setState({dataDeleteText:"Deleting..."});
         axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
             // alert(response.data);
-            this.componentDidMount();
+            if(response.data===1 && response.status===200){
+                this.setState({dataDeleteText:"Delete Success!!"})
+                this.componentDidMount();
+            }else {
+                this.setState({dataDeleteText:"Delete Fail!!"});
+            }
         }).catch(() => {
-
+            this.setState({dataDeleteText:"Something Went Wrong!!"});
         })
     }
 
     render() {
 
-        if (this.state.isLoading == true) {
+        if (this.state.isLoading === true) {
             return (
                 <Menu>
                     <Container>
@@ -53,7 +61,7 @@ class ContactPage extends Component {
                     </Container>
                 </Menu>
             )
-        } else if (this.state.isError == true) {
+        } else if (this.state.isError === true) {
             return (
                 <Menu>
                     <Container>
@@ -64,17 +72,6 @@ class ContactPage extends Component {
 
         } else {
             const data = this.state.dataList;
-            //////   Dummy Data  /////
-            // [
-            //     { "id": "5001", name: "Shimul", message: "Hello", type: "None" },
-            //     { "id": "5002", name: "Shimul", message: "Hello", type: "Glazed" },
-            //     { "id": "5005", name: "Shimul", message: "Hello", type: "Sugar" },
-            //     { "id": "5007", name: "Shimul", message: "Hello", type: "Powdered"},
-            //     { "id": "5006", name: "Shimul", message: "Hello", type: "Chocolate"},
-            //     { "id": "5003", name: "Shimul", message: "Hello", type: "Chocolate"},
-            //     { "id": "5004", name: "Shimul", message: "Hello", type: "Maple" }
-            // ];
-
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
@@ -103,7 +100,7 @@ class ContactPage extends Component {
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                                     <h1 className="text-center pt-5">Contact List</h1>
                                     <div className="pt-3 ps-5 ms-3">
-                                        <button onClick={this.contactDataDelete} className="normal-btn mb-2 btn">Delete</button>
+                                        <button onClick={this.contactDataDelete} className="normal-btn mb-2 btn">{this.state.dataDeleteText}</button>
                                         <BootstrapTable
                                             pagination={paginationFactory()}
                                             keyField='id'

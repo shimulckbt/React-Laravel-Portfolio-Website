@@ -14307,19 +14307,38 @@ var ContactPage = /*#__PURE__*/function (_Component) {
     _this = _super.call(this);
 
     _defineProperty(_assertThisInitialized(_this), "contactDataDelete", function () {
+      _this.setState({
+        dataDeleteText: "Deleting..."
+      });
+
       axios__WEBPACK_IMPORTED_MODULE_4___default().post('/contactDelete', {
         id: _this.state.rowDataID
       }).then(function (response) {
         // alert(response.data);
-        _this.componentDidMount();
-      })["catch"](function () {});
+        if (response.data === 1 && response.status === 200) {
+          _this.setState({
+            dataDeleteText: "Delete Success!!"
+          });
+
+          _this.componentDidMount();
+        } else {
+          _this.setState({
+            dataDeleteText: "Delete Fail!!"
+          });
+        }
+      })["catch"](function () {
+        _this.setState({
+          dataDeleteText: "Something Went Wrong!!"
+        });
+      });
     });
 
     _this.state = {
       dataList: [],
       isLoading: true,
       isError: false,
-      rowDataID: ""
+      rowDataID: "",
+      dataDeleteText: 'Delete'
     };
     return _this;
   }
@@ -14330,7 +14349,7 @@ var ContactPage = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_4___default().get('/contactList').then(function (response) {
-        if (response.status == 200) {
+        if (response.status === 200) {
           _this2.setState({
             dataList: response.data,
             isLoading: false,
@@ -14354,30 +14373,20 @@ var ContactPage = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      if (this.state.isLoading == true) {
+      if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
-      } else if (this.state.isError == true) {
+      } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
         });
       } else {
-        var data = this.state.dataList; //////   Dummy Data  /////
-        // [
-        //     { "id": "5001", name: "Shimul", message: "Hello", type: "None" },
-        //     { "id": "5002", name: "Shimul", message: "Hello", type: "Glazed" },
-        //     { "id": "5005", name: "Shimul", message: "Hello", type: "Sugar" },
-        //     { "id": "5007", name: "Shimul", message: "Hello", type: "Powdered"},
-        //     { "id": "5006", name: "Shimul", message: "Hello", type: "Chocolate"},
-        //     { "id": "5003", name: "Shimul", message: "Hello", type: "Chocolate"},
-        //     { "id": "5004", name: "Shimul", message: "Hello", type: "Maple" }
-        // ];
-
+        var data = this.state.dataList;
         var columns = [{
           dataField: 'id',
           text: 'ID'
@@ -14422,7 +14431,7 @@ var ContactPage = /*#__PURE__*/function (_Component) {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       onClick: this.contactDataDelete,
                       className: "normal-btn mb-2 btn",
-                      children: "Delete"
+                      children: this.state.dataDeleteText
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_table_next__WEBPACK_IMPORTED_MODULE_2__["default"], {
                       pagination: (0,react_bootstrap_table2_paginator__WEBPACK_IMPORTED_MODULE_3__["default"])(),
                       keyField: "id",
