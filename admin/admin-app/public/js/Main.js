@@ -14326,16 +14326,28 @@ var ContactPage = /*#__PURE__*/function (_Component) {
             _this.setState({
               dataDeleteText: "Delete"
             });
-          }, 1200);
+          }, 1500);
         } else {
           _this.setState({
             dataDeleteText: "Delete Fail!!"
           });
+
+          setTimeout(function () {
+            _this.setState({
+              dataDeleteText: "Delete"
+            });
+          }, 1500);
         }
       })["catch"](function () {
         _this.setState({
           dataDeleteText: "Something Went Wrong!!"
         });
+
+        setTimeout(function () {
+          _this.setState({
+            dataDeleteText: "Delete"
+          });
+        }, 1500);
       });
     });
 

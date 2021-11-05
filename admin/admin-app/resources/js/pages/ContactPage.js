@@ -45,12 +45,18 @@ class ContactPage extends Component {
                 this.componentDidMount();
                 setTimeout(()=>{
                     this.setState({dataDeleteText:"Delete"})
-                },1200)
+                },1500)
             }else {
                 this.setState({dataDeleteText:"Delete Fail!!"});
+                setTimeout(()=>{
+                    this.setState({dataDeleteText:"Delete"})
+                },1500)
             }
         }).catch(() => {
             this.setState({dataDeleteText:"Something Went Wrong!!"});
+            setTimeout(()=>{
+                this.setState({dataDeleteText:"Delete"})
+            },1500)
         })
     }
 
