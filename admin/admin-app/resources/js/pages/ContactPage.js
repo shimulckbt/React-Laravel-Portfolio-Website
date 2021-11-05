@@ -43,6 +43,9 @@ class ContactPage extends Component {
             if(response.data===1 && response.status===200){
                 this.setState({dataDeleteText:"Delete Success!!"})
                 this.componentDidMount();
+                setTimeout(()=>{
+                    this.setState({dataDeleteText:"Delete"})
+                },1200)
             }else {
                 this.setState({dataDeleteText:"Delete Fail!!"});
             }

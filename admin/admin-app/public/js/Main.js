@@ -14321,6 +14321,12 @@ var ContactPage = /*#__PURE__*/function (_Component) {
           });
 
           _this.componentDidMount();
+
+          setTimeout(function () {
+            _this.setState({
+              dataDeleteText: "Delete"
+            });
+          }, 1200);
         } else {
           _this.setState({
             dataDeleteText: "Delete Fail!!"
