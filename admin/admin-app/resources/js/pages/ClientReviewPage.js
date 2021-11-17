@@ -16,7 +16,7 @@ class ClientReviewPage extends Component {
             isLoading: true,
             isError: false,
             rowDataID: "",
-            dataDeleteText:'Delete'
+            dataDeleteText: 'Delete'
 
         }
     }
@@ -39,30 +39,30 @@ class ClientReviewPage extends Component {
     contactDataDelete = () => {
 
         let confirmDelete = confirm("Are you sure ?")
-        if(confirmDelete===true){
-            this.setState({dataDeleteText:"Deleting..."});
+        if (confirmDelete === true) {
+            this.setState({ dataDeleteText: "Deleting..." });
             axios.post('/reviewDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
-                if(response.data===1 && response.status===200){
-                    this.setState({dataDeleteText:"Delete Success!!"})
+                if (response.data === 1 && response.status === 200) {
+                    this.setState({ dataDeleteText: "Delete Success!!" })
                     this.componentDidMount();
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
-                }else {
-                    this.setState({dataDeleteText:"Delete Fail!!"});
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
+                } else {
+                    this.setState({ dataDeleteText: "Delete Fail!!" });
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
                 }
             }).catch(() => {
-                this.setState({dataDeleteText:"Something Went Wrong!!"});
-                setTimeout(()=>{
-                    this.setState({dataDeleteText:"Delete"})
-                },1500)
+                this.setState({ dataDeleteText: "Something Went Wrong!!" });
+                setTimeout(() => {
+                    this.setState({ dataDeleteText: "Delete" })
+                }, 1500)
             })
-        }else {
-            this.setState({dataDeleteText:"Delete"})
+        } else {
+            this.setState({ dataDeleteText: "Delete" })
         }
     }
 
@@ -111,7 +111,7 @@ class ClientReviewPage extends Component {
                         <Container>
                             <Row>
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-                                    <h1 className="text-center pt-5">Contact List</h1>
+                                    <h1 className="text-center pt-5">Client Review</h1>
                                     <div className="pt-3 ps-5 ms-3">
                                         <button onClick={this.contactDataDelete} className="normal-btn mb-2 btn">{this.state.dataDeleteText}</button>
                                         <BootstrapTable

@@ -113,7 +113,7 @@ class ProjectPage extends Component {
                         <Container>
                             <Row>
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-                                    <h1 className="text-center pt-5">Contact List</h1>
+                                    <h1 className="text-center pt-5">Project Details</h1>
                                     <div className="pt-3 ps-5 ms-3">
                                         <button onClick={this.contactDataDelete} className="normal-btn mb-2 btn">{this.state.dataDeleteText}</button>
                                         <BootstrapTable

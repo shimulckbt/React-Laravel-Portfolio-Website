@@ -14372,7 +14372,7 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
                   xs: 12,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                     className: "text-center pt-5",
-                    children: "Contact List"
+                    children: "Client Review"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "pt-3 ps-5 ms-3",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -14867,7 +14867,7 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
                   xs: 12,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                     className: "text-center pt-5",
-                    children: "Contact List"
+                    children: "All Courses"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "pt-3 ps-5 ms-3",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -15184,7 +15184,7 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
                   xs: 12,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                     className: "text-center pt-5",
-                    children: "Contact List"
+                    children: "Project Details"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "pt-3 ps-5 ms-3",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -15402,7 +15402,7 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
           dataField: 'service_description',
           text: 'Description'
         }, {
-          dataField: 'service_logo ',
+          dataField: 'service_logo',
           text: 'Logo'
         }];
         var selectRow = {
@@ -15430,7 +15430,7 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
                   xs: 12,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                     className: "text-center pt-5",
-                    children: "Contact List"
+                    children: "Services"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "pt-3 ps-5 ms-3",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
