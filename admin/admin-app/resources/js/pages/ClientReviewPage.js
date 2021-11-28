@@ -70,7 +70,7 @@ class ClientReviewPage extends Component {
 
         if (this.state.isLoading === true) {
             return (
-                <Menu>
+                <Menu title="Review">
                     <Container>
                         <Loading />
                     </Container>
@@ -78,7 +78,7 @@ class ClientReviewPage extends Component {
             )
         } else if (this.state.isError === true) {
             return (
-                <Menu>
+                <Menu title="Review">
                     <Container>
                         <WentWrong />
                     </Container>
@@ -107,7 +107,7 @@ class ClientReviewPage extends Component {
             }
             return (
                 <Fragment>
-                    <Menu>
+                    <Menu title="Review">
                         <Container>
                             <Row>
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>

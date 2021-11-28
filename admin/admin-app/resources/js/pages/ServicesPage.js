@@ -65,12 +65,15 @@ class ServicesPage extends Component {
             this.setState({ dataDeleteText: "Delete" })
         }
     }
+    imageFormatter = (cell, row) => {
+        return (<img className="w-100" src={cell} />)
+    }
 
     render() {
 
         if (this.state.isLoading === true) {
             return (
-                <Menu>
+                <Menu title="Services">
                     <Container>
                         <Loading />
                     </Container>
@@ -78,7 +81,7 @@ class ServicesPage extends Component {
             )
         } else if (this.state.isError === true) {
             return (
-                <Menu>
+                <Menu title="Services">
                     <Container>
                         <WentWrong />
                     </Container>
@@ -90,6 +93,7 @@ class ServicesPage extends Component {
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
+                    { dataField: 'service_logo', text: 'Image', formatter: this.imageFormatter },
                     { dataField: 'service_name', text: 'Service Name' },
                     { dataField: 'service_description', text: 'Description' },
                     { dataField: 'service_logo', text: 'Logo' },
@@ -109,7 +113,7 @@ class ServicesPage extends Component {
 
             return (
                 <Fragment>
-                    <Menu>
+                    <Menu title="Services">
                         <Container>
                             <Row>
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>

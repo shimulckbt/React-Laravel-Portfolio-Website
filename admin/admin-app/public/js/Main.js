@@ -13969,7 +13969,9 @@ var Menu = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("title", {
+          children: this.props.title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
           expand: "lg",
           className: "fixed-top shadow-sm bg-white mb-5 py-3",
           variant: "light",
@@ -14325,12 +14327,14 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
 
       if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Review",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
       } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Review",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
@@ -14362,6 +14366,7 @@ var ClientReviewPage = /*#__PURE__*/function (_Component) {
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            title: "Review",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -14568,12 +14573,14 @@ var ContactPage = /*#__PURE__*/function (_Component) {
 
       if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Contacts",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
       } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Contacts",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
@@ -14608,6 +14615,7 @@ var ContactPage = /*#__PURE__*/function (_Component) {
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            title: "Contacts",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -14772,6 +14780,13 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "imageFormatter", function (cell, row) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+        className: "w-70",
+        src: cell
+      });
+    });
+
     _this.state = {
       dataList: [],
       isLoading: true,
@@ -14814,12 +14829,14 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
 
       if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Courses",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
       } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Courses",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
@@ -14829,6 +14846,10 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
         var columns = [{
           dataField: 'id',
           text: 'ID'
+        }, {
+          dataField: 'small_img',
+          text: 'Image',
+          formatter: this.imageFormatter
         }, {
           dataField: 'short_title',
           text: 'Title'
@@ -14857,6 +14878,7 @@ var CoursesPage = /*#__PURE__*/function (_Component) {
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            title: "Courses",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -14954,6 +14976,7 @@ var HomePage = /*#__PURE__*/function (_Component) {
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Home",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
             children: "Home Page"
           })
@@ -15092,6 +15115,13 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "imageFormatter", function (cell, row) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+        className: "w-100",
+        src: cell
+      });
+    });
+
     _this.state = {
       dataList: [],
       isLoading: true,
@@ -15134,12 +15164,14 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
 
       if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Projects",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
       } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Projects",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
@@ -15149,6 +15181,10 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
         var columns = [{
           dataField: 'id',
           text: 'ID'
+        }, {
+          dataField: 'img_one',
+          text: 'Image',
+          formatter: this.imageFormatter
         }, {
           dataField: 'project_name',
           text: 'Project Name'
@@ -15174,6 +15210,7 @@ var ProjectPage = /*#__PURE__*/function (_Component) {
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            title: "Projects",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -15338,6 +15375,13 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "imageFormatter", function (cell, row) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+        className: "w-100",
+        src: cell
+      });
+    });
+
     _this.state = {
       dataList: [],
       isLoading: true,
@@ -15380,12 +15424,14 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
 
       if (this.state.isLoading === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Services",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })
         });
       } else if (this.state.isError === true) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          title: "Services",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_WentWrong__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
@@ -15395,6 +15441,10 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
         var columns = [{
           dataField: 'id',
           text: 'ID'
+        }, {
+          dataField: 'service_logo',
+          text: 'Image',
+          formatter: this.imageFormatter
         }, {
           dataField: 'service_name',
           text: 'Service Name'
@@ -15420,6 +15470,7 @@ var ServicesPage = /*#__PURE__*/function (_Component) {
         };
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            title: "Services",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {

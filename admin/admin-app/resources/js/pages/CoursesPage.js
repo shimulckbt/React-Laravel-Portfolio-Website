@@ -16,7 +16,7 @@ class CoursesPage extends Component {
             isLoading: true,
             isError: false,
             rowDataID: "",
-            dataDeleteText:'Delete'
+            dataDeleteText: 'Delete'
 
         }
     }
@@ -39,38 +39,41 @@ class CoursesPage extends Component {
     contactDataDelete = () => {
 
         let confirmDelete = confirm("Are you sure ?")
-        if(confirmDelete===true){
-            this.setState({dataDeleteText:"Deleting..."});
+        if (confirmDelete === true) {
+            this.setState({ dataDeleteText: "Deleting..." });
             axios.post('/courseDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
-                if(response.data===1 && response.status===200){
-                    this.setState({dataDeleteText:"Delete Success!!"})
+                if (response.data === 1 && response.status === 200) {
+                    this.setState({ dataDeleteText: "Delete Success!!" })
                     this.componentDidMount();
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
-                }else {
-                    this.setState({dataDeleteText:"Delete Fail!!"});
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
+                } else {
+                    this.setState({ dataDeleteText: "Delete Fail!!" });
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
                 }
             }).catch(() => {
-                this.setState({dataDeleteText:"Something Went Wrong!!"});
-                setTimeout(()=>{
-                    this.setState({dataDeleteText:"Delete"})
-                },1500)
+                this.setState({ dataDeleteText: "Something Went Wrong!!" });
+                setTimeout(() => {
+                    this.setState({ dataDeleteText: "Delete" })
+                }, 1500)
             })
-        }else {
-            this.setState({dataDeleteText:"Delete"})
+        } else {
+            this.setState({ dataDeleteText: "Delete" })
         }
+    }
+    imageFormatter = (cell, row) => {
+        return (<img className="w-70" src={cell} />)
     }
 
     render() {
 
         if (this.state.isLoading === true) {
             return (
-                <Menu>
+                <Menu title="Courses">
                     <Container>
                         <Loading />
                     </Container>
@@ -78,7 +81,7 @@ class CoursesPage extends Component {
             )
         } else if (this.state.isError === true) {
             return (
-                <Menu>
+                <Menu title="Courses">
                     <Container>
                         <WentWrong />
                     </Container>
@@ -90,6 +93,7 @@ class CoursesPage extends Component {
             const columns =
                 [
                     { dataField: 'id', text: 'ID' },
+                    { dataField: 'small_img', text: 'Image', formatter: this.imageFormatter },
                     { dataField: 'short_title', text: 'Title' },
                     { dataField: 'short_description', text: 'Description' },
                     { dataField: 'total_lectures', text: 'Total Lecture' },
@@ -110,7 +114,7 @@ class CoursesPage extends Component {
 
             return (
                 <Fragment>
-                    <Menu>
+                    <Menu title="Courses">
                         <Container>
                             <Row>
                                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
