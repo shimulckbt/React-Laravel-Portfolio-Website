@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+/// home data manage
+Route::get('/countsummary', 'App\Http\Controllers\HomeController@CountSummary');
+
+
 /// contact data manage
 Route::get('/contactList', 'App\Http\Controllers\ContactController@ContactList');
 Route::post('/contactDelete', 'App\Http\Controllers\ContactController@ContactDelete');
