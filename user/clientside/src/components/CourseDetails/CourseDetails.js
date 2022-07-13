@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import {Button, Col, Container, Row} from "react-bootstrap";
-import {Player, BigPlayButton} from "video-react";
+import React, { Component, Fragment } from 'react';
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Player, BigPlayButton } from "video-react";
 import ReactHtmlParser from "react-html-parser";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
@@ -11,18 +11,18 @@ class CourseDetails extends Component {
 
     constructor(props) {
         super(props);
-        this.state={
-            MyCourseID:props.id,
-            LongTitle:"",
-            TotalLectures:"",
-            TotalStudents:"",
-            ShortDescription:"",
-            LongDescription:"",
-            VideoUrl:"",
-            MOreInfoURL:"",
-            SkillAll:"",
-            loading:true,
-            error:false
+        this.state = {
+            MyCourseID: props.id,
+            LongTitle: "",
+            TotalLectures: "",
+            TotalStudents: "",
+            ShortDescription: "",
+            LongDescription: "",
+            VideoUrl: "",
+            MOreInfoURL: "",
+            SkillAll: "",
+            loading: true,
+            error: false
         }
     }
 
@@ -32,10 +32,10 @@ class CourseDetails extends Component {
     }*/
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.courseDetails+this.state.MyCourseID).then(result=>{
-            if(result==null){
-                this.setState({error:true,loading:false})
-            }else {
+        RestClient.GetRequest(AppUrl.courseDetails + this.state.MyCourseID).then(result => {
+            if (result == null) {
+                this.setState({ error: true, loading: false })
+            } else {
                 this.setState({
                     LongTitle: result[0]['long_title'],
                     TotalLectures: result[0]['total_lectures'],
@@ -48,18 +48,18 @@ class CourseDetails extends Component {
                     loading: false
                 })
             }
-        }).catch(error=>{
-            this.setState({error:true,loading:false})
+        }).catch(error => {
+            this.setState({ error: true, loading: false })
         })
     }
 
     render() {
 
         if (this.state.loading === true && this.state.error === false) {
-            return <Loading/>
-        }else if (this.state.loading===false && this.state.error === false){
+            return <Loading />
+        } else if (this.state.loading === false && this.state.error === false) {
             return (
-                <Fragment>
+                <>
                     <Container fluid={true} className="topFixedPage p-0">
                         <div className="topPageOverlay">
                             <Container className="topPageContentCourse">
@@ -83,7 +83,7 @@ class CourseDetails extends Component {
                             <Col lg={6} md={6} sm={12}>
                                 <h1 className="serviceName">Still You Get</h1>
                                 {ReactHtmlParser(this.state.SkillAll)}
-                                <Button target="_blank" href={"//"+this.state.MOreInfoURL} variant="primary">More Info</Button>
+                                <Button target="_blank" href={"//" + this.state.MOreInfoURL} variant="primary">More Info</Button>
                             </Col>
 
                             <Col lg={6} md={6} sm={12}>
@@ -94,10 +94,10 @@ class CourseDetails extends Component {
                             </Col>
                         </Row>
                     </Container>
-                </Fragment>
+                </>
             );
-        }else if (this.state.error===true){
-            return <WentWrong/>
+        } else if (this.state.error === true) {
+            return <WentWrong />
         }
         /*
 

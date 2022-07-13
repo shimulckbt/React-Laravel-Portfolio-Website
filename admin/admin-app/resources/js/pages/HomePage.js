@@ -54,7 +54,7 @@ class HomePage extends Component {
         } else {
             const data = this.state.dataList;
             return (
-                <Fragment>
+                <>
                     <Menu title="Home">
                         <Container>
                             <h1 className="text-center pt-5">Dashboard</h1>
@@ -106,7 +106,7 @@ class HomePage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment>
+                </>
             );
         }
     }

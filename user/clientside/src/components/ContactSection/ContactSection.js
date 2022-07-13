@@ -61,7 +61,7 @@ class ContactSection extends Component {
             return <Loading />
         } else if (this.state.loading === false && this.state.error === false) {
             return (
-                <Fragment>
+                <>
                     <Container className="mt-5">
                         <Row>
                             <Col lg={6} md={6} sm={12}>
@@ -94,7 +94,7 @@ class ContactSection extends Component {
                             </Col>
                         </Row>
                     </Container>
-                </Fragment>
+                </>
             );
         } else if (this.state.error === true) {
             return <WentWrong />

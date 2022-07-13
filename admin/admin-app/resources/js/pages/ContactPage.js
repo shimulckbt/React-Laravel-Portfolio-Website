@@ -16,7 +16,7 @@ class ContactPage extends Component {
             isLoading: true,
             isError: false,
             rowDataID: "",
-            dataDeleteText:'Delete'
+            dataDeleteText: 'Delete'
 
         }
     }
@@ -39,30 +39,30 @@ class ContactPage extends Component {
     contactDataDelete = () => {
 
         let confirmDelete = confirm("Are you sure ?")
-        if(confirmDelete===true){
-            this.setState({dataDeleteText:"Deleting..."});
+        if (confirmDelete === true) {
+            this.setState({ dataDeleteText: "Deleting..." });
             axios.post('/contactDelete', { id: this.state.rowDataID }).then((response) => {
                 // alert(response.data);
-                if(response.data===1 && response.status===200){
-                    this.setState({dataDeleteText:"Delete Success!!"})
+                if (response.data === 1 && response.status === 200) {
+                    this.setState({ dataDeleteText: "Delete Success!!" })
                     this.componentDidMount();
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
-                }else {
-                    this.setState({dataDeleteText:"Delete Fail!!"});
-                    setTimeout(()=>{
-                        this.setState({dataDeleteText:"Delete"})
-                    },1500)
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
+                } else {
+                    this.setState({ dataDeleteText: "Delete Fail!!" });
+                    setTimeout(() => {
+                        this.setState({ dataDeleteText: "Delete" })
+                    }, 1500)
                 }
             }).catch(() => {
-                this.setState({dataDeleteText:"Something Went Wrong!!"});
-                setTimeout(()=>{
-                    this.setState({dataDeleteText:"Delete"})
-                },1500)
+                this.setState({ dataDeleteText: "Something Went Wrong!!" });
+                setTimeout(() => {
+                    this.setState({ dataDeleteText: "Delete" })
+                }, 1500)
             })
-        }else {
-            this.setState({dataDeleteText:"Delete"})
+        } else {
+            this.setState({ dataDeleteText: "Delete" })
         }
     }
 
@@ -108,7 +108,7 @@ class ContactPage extends Component {
             }
 
             return (
-                <Fragment>
+                <>
                     <Menu title="Contacts">
                         <Container>
                             <Row>
@@ -127,7 +127,7 @@ class ContactPage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment >
+                </>
             );
         }
     }

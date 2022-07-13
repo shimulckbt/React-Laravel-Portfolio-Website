@@ -113,7 +113,7 @@ class CoursesPage extends Component {
             }
 
             return (
-                <Fragment>
+                <>
                     <Menu title="Courses">
                         <Container>
                             <Row>
@@ -132,7 +132,7 @@ class CoursesPage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment >
+                </>
             );
         }
     }

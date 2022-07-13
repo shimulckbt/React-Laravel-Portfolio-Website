@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import {Navbar, NavLink} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, { Component, Fragment } from 'react';
+import { Navbar, NavLink } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBars,
     faBookOpen,
@@ -11,34 +11,34 @@ import {
     faHome,
     faPowerOff
 } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
 
     constructor() {
         super();
-        this.state={
-            sideNav:false,
-            sideNavClass:"sidenavClose",
-            mainDivOverlay:"main-overlay-close"
+        this.state = {
+            sideNav: false,
+            sideNavClass: "sidenavClose",
+            mainDivOverlay: "main-overlay-close"
         }
         // this.showHideSideNav = this.showHideSideNav.bind(this)
     }
 
     showHideSideNav = () => {
-        if(this.state.sideNav===false){
-            this.setState({sideNav:true,NavText:"",sideNavClass:"sidenavOpen",mainDivOverlay:"main-overlay-open"})
+        if (this.state.sideNav === false) {
+            this.setState({ sideNav: true, NavText: "", sideNavClass: "sidenavOpen", mainDivOverlay: "main-overlay-open" })
         }
         else {
-            this.setState({sideNav:false,NavText:"d-none",sideNavClass:"sidenavClose",mainDivOverlay:"main-overlay-close"})
+            this.setState({ sideNav: false, NavText: "d-none", sideNavClass: "sidenavClose", mainDivOverlay: "main-overlay-close" })
         }
     }
 
     render() {
         return (
-            <Fragment>
+            <>
                 <title>{this.props.title}</title>
-                <Navbar  expand="lg" className="fixed-top shadow-sm bg-white mb-5 py-3" variant="light" bg="white">
+                <Navbar expand="lg" className="fixed-top shadow-sm bg-white mb-5 py-3" variant="light" bg="white">
                     <Navbar.Brand onClick={this.showHideSideNav} href="#" className="ms-2"><FontAwesomeIcon icon={faBars} /></Navbar.Brand>
                     <b>ADMIN DASHBOARD</b>
                 </Navbar>
@@ -59,7 +59,7 @@ class Menu extends Component {
                 <div className="mt-5">
                     {this.props.children}
                 </div>
-            </Fragment>
+            </>
         );
     }
 }

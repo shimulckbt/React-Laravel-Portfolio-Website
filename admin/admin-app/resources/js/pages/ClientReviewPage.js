@@ -106,7 +106,7 @@ class ClientReviewPage extends Component {
                 }
             }
             return (
-                <Fragment>
+                <>
                     <Menu title="Review">
                         <Container>
                             <Row>
@@ -125,7 +125,7 @@ class ClientReviewPage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment >
+                </>
             );
         }
     }

@@ -112,7 +112,7 @@ class ServicesPage extends Component {
             }
 
             return (
-                <Fragment>
+                <>
                     <Menu title="Services">
                         <Container>
                             <Row>
@@ -131,7 +131,7 @@ class ServicesPage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment >
+                </>
             );
         }
     }

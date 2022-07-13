@@ -5,7 +5,7 @@ import wentWrongImg from "../../images/wentWrong.png";
 class WentWrong extends Component {
     render() {
         return (
-            <Fragment>
+            <>
                 <Container>
                     <Row className="d-flex mt-5 mb-5 justify-content-center">
                         <Col className="text-center" lg={6} md={6} sm={12}>
@@ -13,7 +13,7 @@ class WentWrong extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </Fragment>
+            </>
         );
     }
 }

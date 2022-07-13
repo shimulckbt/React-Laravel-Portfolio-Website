@@ -51,14 +51,14 @@ class Services extends Component {
             })
 
             return (
-                <Fragment>
+                <>
                     <Container className="text-center">
                         <Rotate><h1 className="serviceMainTitle">My Services</h1></Rotate>
                         <Bounce><Row>
                             {myView}
                         </Row></Bounce>
                     </Container>
-                </Fragment>
+                </>
             );
         } else if (this.state.error === true) {
             return <WentWrong />

@@ -38,7 +38,7 @@ class TopNavigation extends Component {
 
     render() {
         return (
-            <Fragment>
+            <>
                 <title>{this.state.pageTitle}</title>
                 <Navbar variant={this.state.navVariant} className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg">
                     <Bounce><Navbar.Brand ><NavLink className={this.state.navBarTitle} to="/"><img src={this.state.navBarLogo} /> Shimul Chakraborty</NavLink></Navbar.Brand></Bounce>
@@ -57,7 +57,7 @@ class TopNavigation extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-            </Fragment >
+            </ >
         );
     }
 }

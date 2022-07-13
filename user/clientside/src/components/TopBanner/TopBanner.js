@@ -49,7 +49,7 @@ class TopBanner extends Component {
 
     render() {
         return (
-            <Fragment>
+            <>
                 <Container fluid={true} className="topFixedBanner p-0">
                     <div className="topBannerOverlay">
                         <Container className="topContent">
@@ -73,7 +73,7 @@ class TopBanner extends Component {
                         </Container>
                     </div>
                 </Container>
-            </Fragment>
+            </>
         );
     }
 }

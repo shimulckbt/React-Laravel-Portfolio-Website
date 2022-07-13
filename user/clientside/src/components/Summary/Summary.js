@@ -1,7 +1,7 @@
-import React, {Component, Fragment} from 'react';
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCheckCircle} from "@fortawesome/free-solid-svg-icons"
+import React, { Component, Fragment } from 'react';
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons"
 import CountUp from 'react-countup';
 import VisibilitySensor from "react-visibility-sensor";
 import Zoom from 'react-reveal/Zoom';
@@ -9,7 +9,7 @@ import Zoom from 'react-reveal/Zoom';
 class Summary extends Component {
     render() {
         return (
-            <Fragment>
+            <>
                 <Container fluid={true} className="summaryBanner summarySection p-0">
                     <div className="summaryBannerOverlay">
                         <Container className="text-center">
@@ -31,7 +31,7 @@ class Summary extends Component {
 
                                             </h1>
                                             <h4 className="countTitle">Total Project</h4>
-                                            <hr className="bg-white w-25 m-auto"/>
+                                            <hr className="bg-white w-25 m-auto" />
                                         </Col>
 
                                         <Col>
@@ -46,7 +46,7 @@ class Summary extends Component {
                                                 </CountUp>
                                             </h1>
                                             <h4 className="countTitle">Total Clients</h4>
-                                            <hr className="bg-white w-25 m-auto"/>
+                                            <hr className="bg-white w-25 m-auto" />
                                         </Col>
                                     </Row>
 
@@ -58,10 +58,10 @@ class Summary extends Component {
                                             <Card.Body>
                                                 <Card.Title className="cardTitle">How i Work</Card.Title>
                                                 <Card.Text>
-                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Requirement Gathering</p>
-                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>System Analysis</p>
-                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Coding Testing</p>
-                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle}/>Implementation</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} />Requirement Gathering</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} />System Analysis</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} />Coding Testing</p>
+                                                    <p className="cardSubTitle"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} />Implementation</p>
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -73,7 +73,7 @@ class Summary extends Component {
 
                     </div>
                 </Container>
-            </Fragment>
+            </>
         );
     }
 }

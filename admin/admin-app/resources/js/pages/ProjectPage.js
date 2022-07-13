@@ -112,7 +112,7 @@ class ProjectPage extends Component {
             }
 
             return (
-                <Fragment>
+                <>
                     <Menu title="Projects">
                         <Container>
                             <Row>
@@ -131,7 +131,7 @@ class ProjectPage extends Component {
                             </Row>
                         </Container>
                     </Menu>
-                </Fragment >
+                </>
             );
         }
     }
